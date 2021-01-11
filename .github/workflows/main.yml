@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: HTTP 400
+        uses: suisei-cn/actions-download-file@v1
+        with:
+          url: https://httpbin.org/status/400
+          target: ${{ github.workspace }}
+
+      - name: HTTP 403
+        uses: suisei-cn/actions-download-file@v1
+        with:
+          url: https://httpbin.org/status/403
+          target: ${{ github.workspace }}
+
+      - name: HTTP 404
+        uses: suisei-cn/actions-download-file@v1
+        with:
+          url: https://httpbin.org/status/404
+          target: ${{ github.workspace }}
+
+      - name: HTTP 500
+        uses: suisei-cn/actions-download-file@v1
+        with:
+          url: https://httpbin.org/status/500
+          target: ${{ github.workspace }}
+
+      - name: HTTP 502
+        uses: suisei-cn/actions-download-file@v1
+        with:
+          url: https://httpbin.org/status/502
+          target: ${{ github.workspace }}
